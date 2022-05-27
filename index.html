@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gnews-Xem tin tức mỗi ngày</title>
+    <link rel="stylesheet" href="sub.css" type="text/css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="main.js"></script>
+</head>
+
+<body>
+    <header>
+        <span class="header-title">My News</span>
+        <ion-icon class="header-search" name="search"></ion-icon>
+        <div class="modal-box">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <label>Keywords</label>
+                <input id="search-keywords" type="text">
+                <button id="search-gnews">Search</button>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="searching-report"> </div>
+        <div class="loading">
+            <img src="Spinner-1s-200px.gif" alt="loading">
+        </div>
+        <div class="articles-list">
+        </div>
+        <script>
+            var myAPIToken = "07a539e6ea2dae0cd4dadc2669ba0ce0";
+            var topHeadlineUrl = "https://gnews.io/api/v4/top-headlines?token=" + myAPIToken + "&lang=en";
+            getGNews(topHeadlineUrl);
+        </script>
+
+    </main>
+</body>
+
+</html>
